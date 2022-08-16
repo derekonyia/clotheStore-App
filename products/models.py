@@ -7,7 +7,7 @@ from django.db import models
 # make category shop count, to be used to sort popularity
 
 class Product(models.Model):
-	Name 		= models.CharField(max_length=100)
+	Name 		= models.CharField(max_length=200)
 	image 		= models.ImageField(upload_to='images')  
 	Description = models.TextField()
 	category 	= models.ForeignKey(
@@ -16,13 +16,12 @@ class Product(models.Model):
 
 							 )
 
-class Category(models.Model):
-	category = models.CharField(max_length=10)
+	def __str__(self):
+		return self.Name
 
-# # populates the Category table with known categories from known_categories list
-# 	def populate_category(self, *args, **kwargs):
-# 		known_categories = ['Bedsheet', 'pillowcases', 'duvet']
-# 		if self.objects.all() == none:
-# 			for category in known_categories:
-# 				self.objects.create(category=category)
-# 		return True 
+class Category(models.Model):
+	category = models.CharField(max_length=100)
+
+
+	def __str__(self):
+		return self.category
