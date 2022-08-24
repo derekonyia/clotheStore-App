@@ -5,6 +5,10 @@ from django.db import models
 # make deals column
 # make available column
 # make category shop count, to be used to sort popularity
+# add price, locatioin, brand, condition attribute in Product relation
+# change fk from restrict to cascade
+# add a review relation and add a foreign key in Product relation
+
 
 class Product(models.Model):
 	Name 		= models.CharField(max_length=200)

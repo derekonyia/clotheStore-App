@@ -134,7 +134,7 @@
 										</a>
 									</div>
 									<div class="card-body">
-									    <h4 class="card-title"><a href="single.html">{{product.Name}}</a></h4>
+									    <h4 class="card-title"><a href="{% url 'product detail view' product.id %}">{{product.Name}}</a></h4>
 									    <ul class="list-inline product-meta">
 									    	<li class="list-inline-item">
 									    		<a href="single.html"><i class="fa fa-folder-open-o"></i>{{ product.category }}</a>

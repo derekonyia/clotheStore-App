@@ -17,13 +17,17 @@ from django.contrib import admin
 from django.urls import path
 
 from pages.views import index_view, contact_view, about_view
+from products.views import product_detail_view, add_to_session, cart_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('',index_view, name='index view'),
     path('contact/', contact_view, name='contact view'),
-    path('about/', about_view, name='about view')
+    path('about/', about_view, name='about view'),
+    path('product/<int:id>/',product_detail_view, name='product detail view' ),
+    path('adp2cart/<int:id>/', add_to_session, name='add_to_session'),
+    path('cart/', cart_view, name='cart')
 ]
 
 # if settings.DEBUG:  
